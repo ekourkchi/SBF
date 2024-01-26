@@ -1,0 +1,1 @@
+./sextractor/pssky.mask

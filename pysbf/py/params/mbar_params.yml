@@ -1,0 +1,15 @@
+# Region inclusion criteria   -> these go into a param file
+minsnr : 5           # minimum Pf/P1 SBF S/N
+maxGCpeakdiff : 0.5  # mag Peak GCLF - cutoff mag < 0.5
+minfrac : 0.5        # good pixels > 50%
+mingalsky : 0.5      # gal/sky > 0.5
+maxPrP0 : 0.1        # Pr/P0 < 0.1
+maxmbarsig : 0.2     # maximum mag error on mbar
+mingz : 1.2          # minimum g-z for the calibration
+minjh : 0.22         # minimum J-H (AB) for calibration
+
+ext_sig :  0.1           # this is somewhat arbitrary, but we have been using it successfully in past years. uncertainty in the extinction value
+Prsig : 0.5              # in the past we used Pr uncertainty as 0.25*Pr/P0 + diff (SE-dophot), but we don't compute the latter. 
+
+
+

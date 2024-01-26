@@ -1,0 +1,113 @@
+LMC_correction : -0.023  # Latest LMC distance modulus 18.477 (ref: Pietrzyński et al. 2019)
+
+
+mbarfilter :
+
+  g_z :
+
+    offset : -1.4
+  
+    F160W:
+      linear:
+        curvature : 0 
+        slope : 2.13
+        zp : -3.640
+        rms : 0.114
+      quadratic : 
+        curvature : 3.38 
+        slope : 1.54
+        zp : -3.723
+        rms : 0.128      
+
+    F110W:
+      linear:
+        curvature : 0 
+        slope : 2.16
+        zp : -2.887
+        rms : 0.086
+      quadratic : 
+        curvature : 4.55
+        slope : 1.73
+        zp : -2.991
+        rms : 0.115  
+  
+  j_h :
+
+    offset : -0.27
+  
+    F160W:
+      linear:
+        curvature : 0 
+        slope : 7.1
+        zp : -3.668
+        rms : 0.121
+      quadratic : 
+        curvature : 59
+        slope : 6.9
+        zp : -3.733
+        rms : 0.149      
+
+    F110W:
+      linear:
+        curvature : 0 
+        slope : 6.7
+        zp : -2.914
+        rms : 0.092
+      quadratic : 
+        curvature : 59
+        slope : 6.3
+        zp : -2.977
+        rms : 0.129 
+  
+
+color_conversion : 
+  # Conversion factors for colors (ref: Jensen+2021)
+  g_z:
+    default: "ACS"
+    source:
+      ACS:
+        slope: 0
+        zp: 0
+        rms_c0: 0.01 
+        rms_c1: 0.015
+        rms_c2: 0.015
+        rms_c5: 0.02
+      SDSS:
+        slope: 0.01
+        zp: -0.01
+        rms_c0: 0.019
+        rms_c1: 0.04
+        rms_c2: 0.098
+        rms_c5: 0.1   # undefined for c5
+      PS:   # default
+        slope: 0.092
+        zp: -0.009
+        rms_c0: 0.016
+        rms_c1: 0.016
+        rms_c2: 0.018
+        rms_c5: 0.02   # undefined for c5
+      DECam: # not yet available
+        slope: 0
+        zp: 0
+        rms_c0: 0 
+        rms_c1: 0
+        rms_c2: 0
+        rms_c5: 0
+  j_h:  # WFC3/IR J-H = 2MASS J-H * slope + zp
+    default: "WFC3IR"
+    source:
+      WFC3IR:
+        slope: 0
+        zp: 0
+        rms_c0: 0.01 
+        rms_c1: 0.02
+        rms_c2: 0.05
+        rms_c5: 0.1
+      2MASS:
+        slope: 0.158
+        zp: 0.065
+        rms_c0: 0.0156 
+        rms_c1: 0.0244
+        rms_c2: 0.0579
+        rms_c5: 0.114
+
